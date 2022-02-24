@@ -1,5 +1,7 @@
 import pg from 'pg';
 
+const { Pool } = pg;
+
 const roleSettings = {
   user: 'bootcamp_role',
   password: 'senha_super_hiper_ultra_secreta_do_role_do_bootcamp',
@@ -8,7 +10,6 @@ const roleSettings = {
   database: 'boardcamp'
 };
 
-const { Pool } = pg;
 const dbConnection = new Pool(roleSettings);
 
 export default dbConnection;
