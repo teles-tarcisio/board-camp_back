@@ -2,9 +2,10 @@
   "name": "projeto15_boardcamp",
   "version": "1.0.0",
   "description": "first project using sql database + backend server",
+  "type": "module",
   "main": "./src/boardcampServer.js",
   "scripts": {
-    "test": "npx nodemon ./src/boardcampServer.js"
+    "dev": "npx nodemon ./src/boardcampServer.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/teles-tarcisio/board-camp_back/issues"
   },
-  "homepage": "https://github.com/teles-tarcisio/board-camp_back#readme"
+  "homepage": "https://github.com/teles-tarcisio/board-camp_back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "pg": "^8.7.3",
+    "string-strip-html": "^9.1.6"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0"
+  }
 }

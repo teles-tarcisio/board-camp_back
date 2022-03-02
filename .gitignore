@@ -1,2 +1,5 @@
 database-boardcamp.zip
 **node_modules/**
+heroku_postgres.txt
+
+.env
