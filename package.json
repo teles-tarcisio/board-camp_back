@@ -5,6 +5,7 @@
   "type": "module",
   "main": "./src/boardcampServer.js",
   "scripts": {
+    "start": "node ./src/boardcampServer.js",
     "dev": "npx nodemon ./src/boardcampServer.js"
   },
   "repository": {

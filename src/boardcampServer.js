@@ -1,5 +1,7 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
+dotenv.config();
 
 import mainRouter from './routes/index.js';
 
@@ -9,8 +11,7 @@ server.use(cors());
 
 server.use(mainRouter);
 
-const serverPort = 4000;
-server.listen(serverPort, () =>
+server.listen(process.env.SERVER_PORT, () =>
   {
-    console.log('Server listening, :' + serverPort);
+    console.log('Server listening, :' + process.env.SERVER_PORT);
 });

@@ -8,7 +8,6 @@ const categoriesRouter = Router();
 
 categoriesRouter.get('/categories', getCategories );
 
-categoriesRouter.post('/categories', createCategory);
-
+categoriesRouter.post('/categories', categoryValidationMiddleware, createCategory);
 
 export default categoriesRouter;

@@ -1,11 +1,10 @@
-import dbConnection from '../dbServices/dbServices.js';
+import dbConnection from '../database/database.js';
 
 export async function createCategory(req, res) {
   try {
     const newCategoryName = req.body.name;
-    const newCategoryPromise = await dbConnection.query(`INSERT INTO categories (name) VALUES ('${newCategoryName}');`);
+    await dbConnection.query(`INSERT INTO categories (name) VALUES ('${newCategoryName}');`);
     res.sendStatus(201);
-
   } catch (error) {
     console.log(error, '!erro! criando categoria no servidor');
     res.status(500);
