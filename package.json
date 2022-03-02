@@ -25,8 +25,5 @@
     "pg": "^8.7.3",
     "string-strip-html": "^9.1.6",
     "dotenv": "^16.0.0"
-  },
-  "devDependencies": {
-    "dotenv": "^16.0.0"
   }
 }
