@@ -1,3 +1,9 @@
 import categoryValidationMiddleware from './categoryValidationMiddleware.js';
 
-export { categoryValidationMiddleware };
+import gameValidationMiddleware from './gameValidationMiddleware.js';
+
+
+export {
+  categoryValidationMiddleware,
+  gameValidationMiddleware
+};

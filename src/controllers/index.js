@@ -1,6 +1,10 @@
-import { getCategories, createCategory } from '../controllers/categoriesController.js';
+import { getCategories, createCategory } from './categoriesController.js';
+
+import { getGames, insertGame } from './gamesController.js';
 
 export {
   getCategories,
-  createCategory
+  createCategory,
+  getGames,
+  insertGame
 };
