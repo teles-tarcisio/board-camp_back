@@ -17,7 +17,7 @@ function handleNewGameData(newGame) {
   newGame.pricePerDay = parseInt(newGame.pricePerDay);
 }
 
-export default async function gameValidationMiddleware(req, res, next) {
+export async function gameValidationMiddleware(req, res, next) {
   const newGameData = req.body;
   handleNewGameData(newGameData);
 
@@ -53,3 +53,14 @@ export default async function gameValidationMiddleware(req, res, next) {
     return res.status(500);   
   }
 }
+
+export function searchGameMiddleware(req, res, next) {
+  const searchGameQuery = req.query;
+  if (!searchGameQuery.name) {
+    next();
+  }
+  else {
+    searchGameQuery.name = stripHtml(searchGameQuery.name).result.trim().replaceAll(' ', '');
+    next();
+  }
+};
