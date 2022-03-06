@@ -7,6 +7,6 @@ import { searchCPFMiddleware, customerIDMiddleware } from '../middlewares/index.
 const customersRouter = Router();
 
 customersRouter.get('/customers', searchCPFMiddleware, getCustomers);
-customersRouter.get('/customer/:id', customerIDMiddleware, getCustomerByID)
+customersRouter.get('/customers/:id', customerIDMiddleware, getCustomerByID)
 
 export default customersRouter;
