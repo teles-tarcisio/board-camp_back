@@ -12,5 +12,6 @@ const dbConfig = {
 };
 
 const dbConnection = new Pool(dbConfig);
+await dbConnection.query('CREATE EXTENSION IF NOT EXISTS unaccent;');
 
 export default dbConnection;

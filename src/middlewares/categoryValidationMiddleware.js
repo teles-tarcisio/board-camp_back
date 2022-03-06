@@ -19,7 +19,7 @@ export default async function categoryValidationMiddleware(req, res, next) {
 
   //pre-existent  
   try {
-    const allCategoriesPromise = await dbConnection.query('SELECT * FROM categories WHERE name=$1;', [newCategoryData.name]);
+    const allCategoriesPromise = await dbConnection.query('SELECT * FROM categories WHERE unaccent(name) ILIKE $1;', [newCategoryData.name]);
     if (allCategoriesPromise.rows.length !== 0) {
       res.status(409).send('Já existe categoria cadastrada com este nome');
       return;
