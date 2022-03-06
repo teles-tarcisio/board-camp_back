@@ -4,10 +4,13 @@ import { gameValidationMiddleware, searchGameMiddleware } from './gameValidation
 
 import { searchCPFMiddleware } from './searchCPFMiddleware.js';
 
+import { customerIDMiddleware } from './customerIDMiddleware.js';
+
 
 export {
   categoryValidationMiddleware,
   gameValidationMiddleware,
   searchGameMiddleware,
-  searchCPFMiddleware
+  searchCPFMiddleware, 
+  customerIDMiddleware
 };
