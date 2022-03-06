@@ -13,12 +13,11 @@ export async function getGames(req, res) {
       return;
     }
     else {
-      console.log(searchGameName, "<---");
       const gamesPromise = await dbConnection.query(`
         SELECT games.*, categories.name as "categoryName"
         FROM games
           JOIN categories ON games."categoryId"=categories.id
-        WHERE games.name iLIKE $1;
+        WHERE games.name ILIKE $1;
       `, [searchGameName + '%']);
       res.status(200).send(gamesPromise.rows);
       return;
