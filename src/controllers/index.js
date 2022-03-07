@@ -2,7 +2,7 @@ import { getCategories, createCategory } from './categoriesController.js';
 
 import { getGames, insertGame } from './gamesController.js';
 
-import { getCustomers, getCustomerByID } from './customersController.js';
+import { getCustomers, getCustomerByID, insertNewCustomer } from './customersController.js';
 
 export {
   getCategories,
@@ -10,5 +10,6 @@ export {
   getGames,
   insertGame,
   getCustomers,
-  getCustomerByID
+  getCustomerByID,
+  insertNewCustomer
 };

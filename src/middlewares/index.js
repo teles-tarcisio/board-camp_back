@@ -6,11 +6,14 @@ import { searchCPFMiddleware } from './searchCPFMiddleware.js';
 
 import { customerIDMiddleware } from './customerIDMiddleware.js';
 
+import { newCustomerMiddleware } from './newCustomerMiddleware.js';
+
 
 export {
   categoryValidationMiddleware,
   gameValidationMiddleware,
   searchGameMiddleware,
   searchCPFMiddleware, 
-  customerIDMiddleware
+  customerIDMiddleware,
+  newCustomerMiddleware
 };

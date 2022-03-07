@@ -42,8 +42,28 @@ export async function getCustomerByID(req, res) {
     res.status(200).send(searchCustomerID.rows[0]);
     return;
   } catch (error) {
-  console.log(error, '!erro! obtendo clientes do servidor');
-  res.status(500);
-  return;
+    console.log(error, '!erro! obtendo clientes do servidor');
+    res.status(500);
+    return;
+  }
 }
+
+export async function insertNewCustomer(req, res) {
+  try {
+    const { name, phone, cpf, birthday } = req.body;
+
+    await dbConnection.query(`
+      INSERT INTO customers 
+        (name, phone, cpf, birthday)
+      VALUES ($1, $2, $3, $4);`,
+        [name, phone, cpf, birthday]
+    );
+    res.sendStatus(201);
+    return;
+    
+  } catch (error) {
+    console.log(error, '!erro! criando cliente no servidor');
+    res.status(500);    
+    return;
+  }
 }
