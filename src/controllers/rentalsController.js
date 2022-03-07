@@ -17,14 +17,19 @@ export async function getRentals(req, res) {
           JOIN categories ON games."categoryId"=categories.id;
       `);
 
-      res.status(200).send(rentalsPromise.rows);
-      /*
+      //res.status(200).send(rentalsPromise.rows);
+      
       res.status(200).send(rentalsPromise.rows.map( row => {
-        const [ customerId, gameId,.... ]
-      }));
-      */
+        const { id, customerId, gameId, rentDate, daysRented, returnDate, originalPrice, delayFee, customerName, gameName, categoryId, categoryName } = row;
 
-      return;
+        return {
+          id, customerId, gameId, rentDate, daysRented, returnDate, originalPrice, delayFee,
+          customer: { id: customerId, name: customerName },
+          game: { id: gameId, name: gameName, categoryId, categoryName }
+        };
+      }));
+
+      return;      
     }
 
     //customerID rentals
