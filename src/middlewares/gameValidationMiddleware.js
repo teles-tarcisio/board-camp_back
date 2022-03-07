@@ -35,7 +35,7 @@ export async function gameValidationMiddleware(req, res, next) {
     const actualCategoryIds = allCategoryIDs.rows.map( category => category.id);
     if (!actualCategoryIds.includes(newGameData.categoryId)) {
       console.log('não existe categoria cadastrada com este id');
-      res.sendStatus(400);
+      res.status(400).send('Não existe categoria cadastrada com este id');
       return;
     }
     //pre-existent
