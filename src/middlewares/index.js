@@ -8,6 +8,8 @@ import { customerIDMiddleware } from './customerIDMiddleware.js';
 
 import { newCustomerMiddleware } from './newCustomerMiddleware.js';
 
+import { searchRentalsMiddleware } from './searchRentalsMiddleware.js';
+
 
 export {
   categoryValidationMiddleware,
@@ -15,5 +17,6 @@ export {
   searchGameMiddleware,
   searchCPFMiddleware, 
   customerIDMiddleware,
-  newCustomerMiddleware
+  newCustomerMiddleware,
+  searchRentalsMiddleware
 };

@@ -4,6 +4,8 @@ import { getGames, insertGame } from './gamesController.js';
 
 import { getCustomers, getCustomerByID, insertNewCustomer, updateCustomer } from './customersController.js';
 
+import { getRentals } from './rentalsController.js';
+
 export {
   getCategories,
   createCategory,
@@ -12,5 +14,6 @@ export {
   getCustomers,
   getCustomerByID,
   insertNewCustomer,
-  updateCustomer
+  updateCustomer,
+  getRentals
 };
