@@ -67,3 +67,33 @@ export async function insertNewCustomer(req, res) {
     return;
   }
 }
+
+export async function updateCustomer(req, res) {
+  try {
+    const { name, phone, cpf, birthday } = req.body;
+    const targetID = req.params.id;
+    const searchCustomerID = await dbConnection.query(`
+        SELECT * FROM customers
+        WHERE customers.id = $1;     
+      `, [targetID]);
+
+    if (searchCustomerID.rows.length === 0) {
+      res.sendStatus(404);
+      return;
+    }
+
+    await dbConnection.query(`
+      UPDATE customers SET
+        name=$1, phone=$2, cpf=$3, birthday=$4
+      WHERE customers.id = $5;`,
+      [name, phone, cpf, birthday, targetID]
+    );
+
+    res.sendStatus(200);
+
+  } catch (error) {
+    console.log(error, '!erro! criando cliente no servidor');
+    res.status(500);    
+    return;
+  }
+}

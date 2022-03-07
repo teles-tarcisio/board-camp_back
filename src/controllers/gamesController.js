@@ -39,6 +39,7 @@ export async function insertGame(req, res) {
       VALUES ($1, $2, $3, $4, $5);`,
         [name, image, stockTotal, categoryId, pricePerDay]);
     res.sendStatus(201);
+    return;
 
   } catch (error) {
     console.log(error, '!erro! criando jogo no servidor');
